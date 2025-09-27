@@ -7,6 +7,7 @@
 
 import Combine
 import UIKit
+import Game
 
 class FavoriteViewModels: ObservableObject {
 //    @Published var gameData: [FavoriteGameData] = []
