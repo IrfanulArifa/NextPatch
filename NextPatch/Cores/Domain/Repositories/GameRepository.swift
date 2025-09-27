@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Game
 
 class GameRepository: GameRepositoryProtocol {
     
@@ -15,7 +16,7 @@ class GameRepository: GameRepositoryProtocol {
         self.gameDataSource = gameDataSource
     }
     
-    func fetchGames() -> AnyPublisher<Game, Error> {
+    func fetchGames() -> AnyPublisher<Games, Error> {
         gameDataSource.fetchGameFromServer()
     }
 
@@ -25,17 +26,5 @@ class GameRepository: GameRepositoryProtocol {
     
     func fetchGameDetails(id: Int) -> AnyPublisher<GameDetails, Error> {
         gameDataSource.fetchGameDetailsFromServer(id: id)
-    }
-    
-    func getGameFromCoreData() -> [FavoriteGameData] {
-        gameDataSource.fetchGameFromLocal()
-    }
-    
-    func toggleFavorite(data: FavoriteGameData) {
-        gameDataSource.toggleFavorite(data: data)
-    }
-    
-    func isFavorite(data: FavoriteGameData) -> Bool {
-        gameDataSource.isFavorite(data: data)
     }
 }

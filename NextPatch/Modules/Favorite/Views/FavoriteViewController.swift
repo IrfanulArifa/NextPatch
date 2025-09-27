@@ -39,29 +39,29 @@ extension FavoriteViewController {
     }
     
     func setupViewModel() {
-        viewModel.$gameData
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                guard let self else { return }
-                self.collectionView.reloadData()
-            }
-            .store(in: &viewModel.cancellables)
+//        viewModel.$gameData
+//            .receive(on: DispatchQueue.main)
+//            .sink { [weak self] _ in
+//                guard let self else { return }
+//                self.collectionView.reloadData()
+//            }
+//            .store(in: &viewModel.cancellables)
     }
     
     func loadData() {
-        viewModel.getFavoriteGames()
+//        viewModel.getFavoriteGames()
     }
 }
 
 extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.gameData.count
+        return 0 /*viewModel.gameData.count*/
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionCell", for: indexPath) as? CardCollectionCell else { return UICollectionViewCell() }
-        cell.configureWithFavData(data: viewModel.gameData[indexPath.item])
+//        cell.configureWithFavData(data: viewModel.gameData[indexPath.item])
         
         return cell
     }
@@ -86,8 +86,8 @@ extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = DetailTrayViewController()
-        vc.gameId = Int(viewModel.gameData[indexPath.item].id)
-        vc.gameName = viewModel.gameData[indexPath.item].name
+//        vc.gameId = Int(viewModel.gameData[indexPath.item].id)
+//        vc.gameName = viewModel.gameData[indexPath.item].name
         vc.modalPresentationStyle = .overCurrentContext
         vc.dismiss = {
             self.loadData()

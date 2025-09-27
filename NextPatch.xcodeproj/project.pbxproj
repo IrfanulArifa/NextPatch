@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		004E151F2E41C0D40046A224 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 004E151E2E41C0D40046A224 /* Swinject */; };
-		004E15462E41EE6C0046A224 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 004E15452E41EE6C0046A224 /* SDWebImage */; };
-		004E15482E41EE6C0046A224 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 004E15472E41EE6C0046A224 /* SDWebImageMapKit */; };
+		0033E55C2E879D9C00E4CA41 /* Game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0033E55B2E879D9C00E4CA41 /* Game.framework */; };
+		0033E55D2E879D9C00E4CA41 /* Game.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0033E55B2E879D9C00E4CA41 /* Game.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		006F6F2E2E406E38007F658E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 006F6F2D2E406E31007F658E /* .swiftlint.yml */; };
-		00F59AB92E49EE4C00027FC0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 00F59AB82E49EE4C00027FC0 /* Alamofire */; };
-		00F59BBD2E4A255E00027FC0 /* SnackBar in Frameworks */ = {isa = PBXBuildFile; productRef = 00F59BBC2E4A255E00027FC0 /* SnackBar */; };
 		090A5A0ECC2A7F1C923CB48F /* Pods_NextPatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A5A78BA1E4684BCD3C94C /* Pods_NextPatch.framework */; };
 		F6F640F03F87EEA1996688D9 /* Pods_NextPatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F18A87B385B06C4924B626 /* Pods_NextPatchTests.framework */; };
 /* End PBXBuildFile section */
@@ -27,7 +24,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0033E55E2E879D9C00E4CA41 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0033E55D2E879D9C00E4CA41 /* Game.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0033E55B2E879D9C00E4CA41 /* Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		006F6F0C2E406301007F658E /* NextPatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextPatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006F6F2D2E406E31007F658E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		00F59B272E49F90E00027FC0 /* NextPatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NextPatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,8 +95,6 @@
 		};
 		00F59B282E49F90E00027FC0 /* NextPatchTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = NextPatchTests;
 			sourceTree = "<group>";
 		};
@@ -95,11 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00F59BBD2E4A255E00027FC0 /* SnackBar in Frameworks */,
-				004E15462E41EE6C0046A224 /* SDWebImage in Frameworks */,
-				00F59AB92E49EE4C00027FC0 /* Alamofire in Frameworks */,
-				004E15482E41EE6C0046A224 /* SDWebImageMapKit in Frameworks */,
-				004E151F2E41C0D40046A224 /* Swinject in Frameworks */,
+				0033E55C2E879D9C00E4CA41 /* Game.framework in Frameworks */,
 				090A5A0ECC2A7F1C923CB48F /* Pods_NextPatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +146,7 @@
 		2FB1A4EAD72D607CD77B3001 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0033E55B2E879D9C00E4CA41 /* Game.framework */,
 				CE9A5A78BA1E4684BCD3C94C /* Pods_NextPatch.framework */,
 				33F18A87B385B06C4924B626 /* Pods_NextPatchTests.framework */,
 			);
@@ -154,7 +161,6 @@
 				870F072CE7CB13E7BF968FF8 /* Pods-NextPatchTests.debug.xcconfig */,
 				724D8480D6FBCDCF9B717FE1 /* Pods-NextPatchTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -171,6 +177,7 @@
 				006F6F0A2E406301007F658E /* Resources */,
 				006F6F252E4063F3007F658E /* ShellScript */,
 				55259AED369F598AC90CD98C /* [CP] Embed Pods Frameworks */,
+				0033E55E2E879D9C00E4CA41 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,11 +189,6 @@
 			);
 			name = NextPatch;
 			packageProductDependencies = (
-				004E151E2E41C0D40046A224 /* Swinject */,
-				004E15452E41EE6C0046A224 /* SDWebImage */,
-				004E15472E41EE6C0046A224 /* SDWebImageMapKit */,
-				00F59AB82E49EE4C00027FC0 /* Alamofire */,
-				00F59BBC2E4A255E00027FC0 /* SnackBar */,
 			);
 			productName = NextPatch;
 			productReference = 006F6F0C2E406301007F658E /* NextPatch.app */;
@@ -243,10 +245,6 @@
 			mainGroup = 006F6F032E406301007F658E;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				004E151D2E41C0D40046A224 /* XCRemoteSwiftPackageReference "Swinject" */,
-				004E15442E41EE6C0046A224 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				00F59AB72E49EE4C00027FC0 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				00F59BBB2E4A255E00027FC0 /* XCRemoteSwiftPackageReference "SnackBar.swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 006F6F0D2E406301007F658E /* Products */;
@@ -303,9 +301,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NextPatch/Pods-NextPatch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NextPatch/Pods-NextPatch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -630,69 +632,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		004E151D2E41C0D40046A224 /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.9.1;
-			};
-		};
-		004E15442E41EE6C0046A224 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.21.1;
-			};
-		};
-		00F59AB72E49EE4C00027FC0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.10.2;
-			};
-		};
-		00F59BBB2E4A255E00027FC0 /* XCRemoteSwiftPackageReference "SnackBar.swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ahmedAlmasri/SnackBar.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		004E151E2E41C0D40046A224 /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 004E151D2E41C0D40046A224 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
-		004E15452E41EE6C0046A224 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 004E15442E41EE6C0046A224 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-		004E15472E41EE6C0046A224 /* SDWebImageMapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 004E15442E41EE6C0046A224 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImageMapKit;
-		};
-		00F59AB82E49EE4C00027FC0 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 00F59AB72E49EE4C00027FC0 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		00F59BBC2E4A255E00027FC0 /* SnackBar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 00F59BBB2E4A255E00027FC0 /* XCRemoteSwiftPackageReference "SnackBar.swift" */;
-			productName = SnackBar;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 006F6F042E406301007F658E /* Project object */;
 }

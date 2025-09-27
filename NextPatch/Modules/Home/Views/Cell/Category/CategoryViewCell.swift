@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Game
 
 class CategoryViewCell: UITableViewCell {
 

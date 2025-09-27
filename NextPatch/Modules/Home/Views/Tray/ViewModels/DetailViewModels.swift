@@ -7,6 +7,7 @@
 
 import Combine
 import UIKit
+import Game
 
 class DetailViewModels: ObservableObject {
     @Published var gameDetails: GameDetailsEntity?
@@ -30,14 +31,6 @@ extension DetailViewModels {
                 self?.gameDetails = gameDetails
             }
             .store(in: &cancellables)
-    }
-    
-    func toggleFavorite(data: FavoriteGameData) -> Void {
-        getAllGamesUseCases.toggleFavorite(data: data)
-    }
-    
-    func isFavorite(data: FavoriteGameData) -> Bool {
-        getAllGamesUseCases.isFavorite(data: data)
     }
 }
 

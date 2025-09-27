@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import CoreData
 
-extension GameDetails {
+public extension GameDetails {
     func toFavoriteData() -> FavoriteGameData {
         return FavoriteGameData(
             id: Int64(self.id),
@@ -20,20 +21,20 @@ extension GameDetails {
     }
 }
 
-extension FavoriteGame {
-    func toDomain() -> FavoriteGameData {
-        return FavoriteGameData(
-            id: self.id,
-            name: self.name ?? "",
-            rating: self.rating,
-            ratingTop: self.ratingTop,
-            released: self.released ?? "",
-            backgroundImage: self.backgroundImage ?? ""
-        )
-    }
-}
+//extension FavoriteGame {
+//    func toDomain() -> FavoriteGameData {
+//        return FavoriteGameData(
+//            id: self.id,
+//            name: self.name ?? "",
+//            rating: self.rating,
+//            ratingTop: self.ratingTop,
+//            released: self.released ?? "",
+//            backgroundImage: self.backgroundImage ?? ""
+//        )
+//    }
+//}
 
-extension Result {
+public extension Result {
     func toEntity() -> GameEntity {
         return GameEntity(
             id: self.id,
@@ -46,7 +47,7 @@ extension Result {
     }
 }
 
-extension Array where Element == Result {
+public extension Array where Element == Result {
     func toEntities() -> [GameEntity] {
         return self.map { $0.toEntity() }
     }
@@ -54,7 +55,7 @@ extension Array where Element == Result {
 
 
 // MARK: GENRES
-extension GenresResponse {
+public extension GenresResponse {
     func toEntity() -> GenreEntity {
         return GenreEntity(
             id: self.id,
@@ -66,13 +67,13 @@ extension GenresResponse {
     }
 }
 
-extension Array where Element == GenresResponse {
+public extension Array where Element == GenresResponse {
     func toEntities() -> [GenreEntity] {
         return self.map { $0.toEntity() }
     }
 }
 
-extension GameDetails {
+public extension GameDetails {
     func toEntity() -> GameDetailsEntity {
         return GameDetailsEntity(
             id: self.id,
@@ -91,7 +92,7 @@ extension GameDetails {
     }
 }
 
-extension GameDetailsEntity {
+public extension GameDetailsEntity {
     func toFavoriteData() -> FavoriteGameData {
         return FavoriteGameData(
             id: Int64(self.id),
@@ -104,7 +105,7 @@ extension GameDetailsEntity {
     }
 }
 
-extension Developer {
+public extension Developer {
     func toEntity() -> DeveloperEntity {
         return DeveloperEntity(
             id: self.id,
@@ -114,7 +115,7 @@ extension Developer {
     }
 }
 
-extension GameDetailsEntity {
+public extension GameDetailsEntity {
     static let empty = GameDetailsEntity(
         id: 0,
         name: "",

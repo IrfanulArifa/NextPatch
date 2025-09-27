@@ -5,7 +5,7 @@
 //  Created by Irfanul Arifa on 11/08/25.
 //
 
-import SnackBar
+import SnackBar_swift
 
 class SuccessSnackBar: SnackBar {
     

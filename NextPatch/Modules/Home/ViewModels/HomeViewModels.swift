@@ -7,6 +7,7 @@
 
 import Combine
 import UIKit
+import Game
 
 class HomeViewModels: ObservableObject {
     @Published var games: [GameEntity] = []

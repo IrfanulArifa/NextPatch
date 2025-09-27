@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Game
 
 class DetailTrayCell: UITableViewCell {
 
@@ -47,11 +48,11 @@ extension DetailTrayCell {
         lblText.text = "Rating \(data.rating)"
         lblDesc.text = data.descriptionRaw
         
-        if FavoriteGameManager.shared.isFavorite(id: Int64(data.id)) {
-            favImg.image = UIImage(systemName: "heart.fill")
-        } else {
-            favImg.image = UIImage(systemName: "heart")
-        }
+//        if FavoriteGameManager.shared.isFavorite(id: Int64(data.id)) {
+//            favImg.image = UIImage(systemName: "heart.fill")
+//        } else {
+//            favImg.image = UIImage(systemName: "heart")
+//        }
     
         screenshotCollection.reloadData()
         tagCollection.reloadData()
