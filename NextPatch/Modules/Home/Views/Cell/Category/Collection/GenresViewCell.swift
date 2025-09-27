@@ -28,12 +28,12 @@ extension GenresViewCell {
     }
     
     func configureScrennshot(with data: DeveloperEntity?) {
-//        genreImg.sd_setImage(with: URL(string: data?.imageBackground ?? ""))
+        genreImg.sd_setImage(with: URL(string: data?.imageBackground ?? ""))
         genreLbl.text = ""
     }
     
     func configureTag(with data: DeveloperEntity?) {
-//        genreImg.sd_setImage(with: URL(string: data?.imageBackground ?? ""))
-//        genreLbl.text = data?.name ?? ""
+        genreImg.sd_setImage(with: URL(string: data?.imageBackground ?? ""))
+        genreLbl.text = data?.name ?? ""
     }
 }

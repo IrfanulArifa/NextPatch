@@ -1,10 +1,5 @@
-//
-//  DependencyInjection.swift
-//  NextPatch
-//
-//  Created by Irfanul Arifa on 05/08/25.
-//
 import Swinject
+import Game
 
 class DependencyInjection {
     static let shared = DependencyInjection()
@@ -12,20 +7,46 @@ class DependencyInjection {
 
     private init() {
         container = Container()
-        container.register(GameDataSource.self) { _ in GameDataSource() }
+
+        // DataSource
+        container.register(GameDataSourceProtocol.self) { _ in GameDataSource() }
+
+        // Repository
         container.register(GameRepository.self) { resolver in
-            GameRepository(gameDataSource: resolver.resolve(GameDataSource.self)) }
+            guard let ds = resolver.resolve(GameDataSourceProtocol.self) else {
+                fatalError("GameDataSourceProtocol not resolved")
+            }
+            return GameRepository(gameDataSource: ds as? GameDataSource)
+        }
+
+        // UseCase
         container.register(GamesUseCase.self) { resolver in
-            GamesUseCase(repository: resolver.resolve(GameRepository.self)!)
+            guard let repo = resolver.resolve(GameRepository.self) else {
+                fatalError("GameRepository not resolved")
+            }
+            return GamesUseCase(repository: repo)
         }
+
+        // ViewModels
         container.register(HomeViewModels.self) { resolver in
-            HomeViewModels(getAllGamesUseCase: resolver.resolve(GamesUseCase.self)!)
+            guard let usecase = resolver.resolve(GamesUseCase.self) else {
+                fatalError("GamesUseCase not resolved")
+            }
+            return HomeViewModels(getAllGamesUseCase: usecase)
         }
+
         container.register(DetailViewModels.self) { resolver in
-            DetailViewModels(getAllGamesUseCase: resolver.resolve(GamesUseCase.self)!)
+            guard let usecase = resolver.resolve(GamesUseCase.self) else {
+                fatalError("GamesUseCase not resolved")
+            }
+            return DetailViewModels(getAllGamesUseCase: usecase)
         }
+
         container.register(FavoriteViewModels.self) { resolver in
-            FavoriteViewModels(getAllGamesUseCase: resolver.resolve(GamesUseCase.self)!)
+            guard let usecase = resolver.resolve(GamesUseCase.self) else {
+                fatalError("GamesUseCase not resolved")
+            }
+            return FavoriteViewModels(getAllGamesUseCase: usecase)
         }
     }
 }

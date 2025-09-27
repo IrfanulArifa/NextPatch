@@ -12,7 +12,6 @@ target 'NextPatch' do
   pod 'SnackBar.swift'
   pod 'SDWebImage'
   pod 'Swinject'
-  pod 'Alamofire'
 
   target 'NextPatchTests' do
     inherit! :search_paths
@@ -25,5 +24,4 @@ end
 target 'Game' do
   use_frameworks!
   project './Game/Game'
-  pod 'Alamofire'
 end
