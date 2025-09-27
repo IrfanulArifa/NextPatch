@@ -1,0 +1,6 @@
+framework module Pods_NextPatch {
+  umbrella header "Pods-NextPatch-umbrella.h"
+
+  export *
+  module * { export * }
+}

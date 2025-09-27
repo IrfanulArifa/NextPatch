@@ -1,0 +1,17 @@
+disabled_rules: # rule identifiers to exclude from running
+- vertical_whitespace
+- line_length
+- unneeded_override
+- trailing_whitespace
+- trailing_newline
+- redundant_optional_initialization
+- identifier_name
+- redundant_string_enum_value
+- force_cast
+- type_body_length
+- file_length
+- type_name
+- cyclomatic_complexity
+- large_tuple
+- function_parameter_count
+- function_body_length
