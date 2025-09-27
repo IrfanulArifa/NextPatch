@@ -7,21 +7,20 @@
 
 import Combine
 import UIKit
-import Game
 
-class HomeViewModels: ObservableObject {
-    @Published var games: [GameEntity] = []
-    @Published var tempGames: [GameEntity] = []
-    @Published var genres: [GenreEntity] = []
-    var cancellables = Set<AnyCancellable>()
+public class HomeViewModels: ObservableObject {
+    @Published public var games: [GameEntity] = []
+    @Published public var tempGames: [GameEntity] = []
+    @Published public var genres: [GenreEntity] = []
+    public var cancellables = Set<AnyCancellable>()
     private let getAllGamesUseCase: GamesUseCase
-    init(getAllGamesUseCase: GamesUseCase) {
+    public init(getAllGamesUseCase: GamesUseCase) {
         self.getAllGamesUseCase = getAllGamesUseCase
     }
 }
 
 extension HomeViewModels {
-    func filterGames(by text: String) {
+    public func filterGames(by text: String) {
         if text.isEmpty {
             games = tempGames
         } else {
@@ -34,7 +33,7 @@ extension HomeViewModels {
 
 // MARK: APIs Call
 extension HomeViewModels {
-    func fetchGames() {
+    public func fetchGames() {
         getAllGamesUseCase.getGamesData()
             .map { $0.results.toEntities() }
             .replaceError(with: [])
@@ -46,7 +45,7 @@ extension HomeViewModels {
             .store(in: &cancellables)
     }
     
-    func fetchGenres() {
+    public func fetchGenres() {
         getAllGamesUseCase.getGenresData()
             .map { $0.results.toEntities() }
             .replaceError(with: [])

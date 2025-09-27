@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Game
 
 class HomeViewController: UIViewController {
     private var viewModel: HomeViewModels!

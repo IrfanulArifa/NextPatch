@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Game
 
 class FavoriteViewController: UIViewController {
     private var viewModel: FavoriteViewModels!

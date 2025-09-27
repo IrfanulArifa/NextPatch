@@ -7,14 +7,13 @@
 
 import Combine
 import UIKit
-import Game
 
-class FavoriteViewModels: ObservableObject {
+public class FavoriteViewModels: ObservableObject {
 //    @Published var gameData: [FavoriteGameData] = []
     
-    var cancellables = Set<AnyCancellable>()
+    public var cancellables = Set<AnyCancellable>()
     private let getAllGameUseCases: GamesUseCase
-    init(getAllGamesUseCase: GamesUseCase) {
+    public init(getAllGamesUseCase: GamesUseCase) {
         self.getAllGameUseCases = getAllGamesUseCase
     }
 }
