@@ -1,12 +1,12 @@
 workflows:
-  ios-project-debug: # workflow ID
-    name: iOS debug # workflow name
+  ios-project-debug:
+    name: iOS debug
     environment:
       xcode: latest
       cocoapods: default
       vars:
-          XCODE_PROJECT: "NextPatch.xcodeproj" # Isikan nama project Anda.
-          XCODE_SCHEME: "NextPatch" # Isikan nama scheme project Anda.
+          XCODE_PROJECT: "NextPatch.xcodeproj"
+          XCODE_SCHEME: "NextPatch"
     scripts:
       - name: Run tests
         script: |
@@ -14,7 +14,7 @@ workflows:
           -project "$XCODE_PROJECT" \
           -scheme "$XCODE_SCHEME" \
           -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,name=Any iOS Simulator Device,OS=18.5' \
+          -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
           clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
       - name: Build debug app
         script: |
@@ -26,4 +26,4 @@ workflows:
     publishing:
       email:
         recipients:
-          - arifa.aja16@gmail.com # Isikan email untuk notifikasi status building.
+          - arifa.aja16@gmail.com
