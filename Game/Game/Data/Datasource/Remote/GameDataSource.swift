@@ -13,7 +13,11 @@ public class GameDataSource: GameDataSourceProtocol {
     private let baseURL = "https://api.rawg.io/api"
     private let apiKey = "bf05f83573884db490b377b00c14cf21"
     
-    public init() {}
+    private let favoriteManager: FavoriteGameManager
+        
+    public init(favoriteManager: FavoriteGameManager = FavoriteGameManager.shared) {
+        self.favoriteManager = favoriteManager
+    }
     
     private func makeRequest<T: Decodable>(endpoint: String, type: T.Type) -> AnyPublisher<T, Error> {
         guard var components = URLComponents(string: "\(baseURL)/\(endpoint)") else {
@@ -54,5 +58,26 @@ public class GameDataSource: GameDataSourceProtocol {
     
     public func fetchGameDetailsFromServer(id: Int) -> AnyPublisher<GameDetails, Error> {
         return makeRequest(endpoint: "games/\(id)", type: GameDetails.self)
+    }
+    
+    public func getFavorites() -> [FavoriteGameData] {
+        favoriteManager.getAllFavorites().map {
+            FavoriteGameData(
+                id: $0.id,
+                name: $0.name ?? "",
+                rating: $0.rating,
+                ratingTop: $0.ratingTop,
+                released: $0.released ?? "",
+                backgroundImage: $0.backgroundImage ?? ""
+            )
+        }
+    }
+    
+    public func toggleFavorite(game: FavoriteGameData) {
+        favoriteManager.toggleFavorite(data: game)
+    }
+    
+    public func isFavorite(id: Int64) -> Bool {
+        favoriteManager.isFavorite(id: id)
     }
 }

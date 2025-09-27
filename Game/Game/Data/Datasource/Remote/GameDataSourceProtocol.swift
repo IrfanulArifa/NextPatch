@@ -11,7 +11,7 @@ public protocol GameDataSourceProtocol {
     func fetchGameFromServer() -> AnyPublisher<Games, Error>
     func fetchGenresFromServer() -> AnyPublisher<Genres, Error>
     func fetchGameDetailsFromServer(id: Int) -> AnyPublisher<GameDetails, Error>
-//    func fetchGameFromLocal() -> [FavoriteGameData]
-//    func toggleFavorite(data: FavoriteGameData) -> Void
-//    func isFavorite(data: FavoriteGameData) -> Bool
+    func getFavorites() -> [FavoriteGameData]
+    func toggleFavorite(game: FavoriteGameData)
+    func isFavorite(id: Int64) -> Bool
 }

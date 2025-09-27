@@ -84,14 +84,15 @@ extension DetailTrayViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(with: viewModel.gameDetails)
         cell.addToFavoriteTapped = { [weak self] data in
             guard let self else { return }
+            viewModel.toggleFavorite(data: data)
             
-//            if viewModel.isFavorite(data: data) {
-//                cell.favImg.image = UIImage(systemName: "heart.fill")
-//                SuccessSnackBar.make(in: self.view, message: "Ditambahkan ke Favorite", duration: .lengthShort).show()
-//            } else {
-//                cell.favImg.image = UIImage(systemName: "heart")
-//                FailedSnackBar.make(in: self.view, message: "Dihapus dari Favorite", duration: .lengthShort).show()
-//            }
+            if viewModel.isFavorite(data: data) {
+                cell.favImg.image = UIImage(systemName: "heart.fill")
+                SuccessSnackBar.make(in: self.view, message: "Ditambahkan ke Favorite", duration: .lengthShort).show()
+            } else {
+                cell.favImg.image = UIImage(systemName: "heart")
+                FailedSnackBar.make(in: self.view, message: "Dihapus dari Favorite", duration: .lengthShort).show()
+            }
         }
         return cell
     }

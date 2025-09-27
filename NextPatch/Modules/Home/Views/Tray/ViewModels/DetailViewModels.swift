@@ -32,6 +32,14 @@ extension DetailViewModels {
             }
             .store(in: &cancellables)
     }
+    
+    func toggleFavorite(data: FavoriteGameData) {
+        getAllGamesUseCases.toggleFavorite(game: data)
+    }
+    
+    func isFavorite(data: FavoriteGameData) -> Bool {
+        getAllGamesUseCases.isFavorite(id: data.id)
+    }
 }
 
 

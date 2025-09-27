@@ -25,4 +25,17 @@ public struct GamesUseCase {
     public func getGameDetailData(id: Int) -> AnyPublisher<GameDetails, Error> {
         repository.fetchGameDetails(id: id)
     }
+    
+    public func getFavorites() -> [FavoriteGameData] {
+        repository.getFavorites()
+    }
+    
+    public func toggleFavorite(game: FavoriteGameData) {
+        repository.toggleFavorite(game: game)
+    }
+    
+    public func isFavorite(id: Int64) -> Bool {
+        repository.isFavorite(id: id)
+    }
+    
 }

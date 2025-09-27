@@ -9,7 +9,7 @@ import Combine
 import UIKit
 
 public class FavoriteViewModels: ObservableObject {
-//    @Published var gameData: [FavoriteGameData] = []
+    @Published public var gameData: [FavoriteGameData] = []
     
     public var cancellables = Set<AnyCancellable>()
     private let getAllGameUseCases: GamesUseCase
@@ -19,7 +19,7 @@ public class FavoriteViewModels: ObservableObject {
 }
 
 extension FavoriteViewModels {
-//    func getFavoriteGames() {
-//        gameData = getAllGameUseCases.getFavoriteGames()
-//    }
+    public func getFavoriteGames() {
+        gameData = getAllGameUseCases.getFavorites()
+    }
 }

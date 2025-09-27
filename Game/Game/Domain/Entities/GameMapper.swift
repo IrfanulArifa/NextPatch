@@ -21,19 +21,6 @@ public extension GameDetails {
     }
 }
 
-//extension FavoriteGame {
-//    func toDomain() -> FavoriteGameData {
-//        return FavoriteGameData(
-//            id: self.id,
-//            name: self.name ?? "",
-//            rating: self.rating,
-//            ratingTop: self.ratingTop,
-//            released: self.released ?? "",
-//            backgroundImage: self.backgroundImage ?? ""
-//        )
-//    }
-//}
-
 public extension Result {
     func toEntity() -> GameEntity {
         return GameEntity(

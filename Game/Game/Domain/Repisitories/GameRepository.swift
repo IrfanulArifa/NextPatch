@@ -26,4 +26,16 @@ public class GameRepository: GameRepositoryProtocol {
     public func fetchGameDetails(id: Int) -> AnyPublisher<GameDetails, Error> {
         gameDataSource.fetchGameDetailsFromServer(id: id)
     }
+    
+    public func getFavorites() -> [FavoriteGameData] {
+        gameDataSource.getFavorites()
+    }
+    
+    public func toggleFavorite(game: FavoriteGameData) {
+        gameDataSource.toggleFavorite(game: game)
+    }
+    
+    public func isFavorite(id: Int64) -> Bool {
+        gameDataSource.isFavorite(id: id)
+    }
 }
