@@ -26,4 +26,4 @@ workflows:
     publishing:
       email:
         recipients:
-          - gilangramadhan96.gr@gmail.com # Isikan email untuk notifikasi status building.
+          - arifa.aja16@gmail.com # Isikan email untuk notifikasi status building.
