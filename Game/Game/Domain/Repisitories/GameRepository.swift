@@ -6,25 +6,24 @@
 //
 
 import Combine
-import Game
 
-class GameRepository: GameRepositoryProtocol {
+public class GameRepository: GameRepositoryProtocol {
     
     let gameDataSource: GameDataSource!
     
-    init(gameDataSource: GameDataSource!) {
+    public init(gameDataSource: GameDataSource!) {
         self.gameDataSource = gameDataSource
     }
     
-    func fetchGames() -> AnyPublisher<Games, Error> {
+    public func fetchGames() -> AnyPublisher<Games, Error> {
         gameDataSource.fetchGameFromServer()
     }
 
-    func fetchGenres() -> AnyPublisher<Genres, Error> {
+    public func fetchGenres() -> AnyPublisher<Genres, Error> {
         gameDataSource.fetchGenresFromServer()
     }
     
-    func fetchGameDetails(id: Int) -> AnyPublisher<GameDetails, Error> {
+    public func fetchGameDetails(id: Int) -> AnyPublisher<GameDetails, Error> {
         gameDataSource.fetchGameDetailsFromServer(id: id)
     }
 }

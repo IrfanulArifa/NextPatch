@@ -6,9 +6,8 @@
 //
 
 import Combine
-import Game
 
-protocol GameRepositoryProtocol {
+public protocol GameRepositoryProtocol {
     func fetchGames() -> AnyPublisher<Games, Error>
     func fetchGenres() -> AnyPublisher<Genres, Error>
     func fetchGameDetails(id: Int) -> AnyPublisher<GameDetails, Error>
