@@ -1,1 +1,1 @@
-[![Codemagic build status](https://api.codemagic.io/apps/<68d78e67719e6798309ef8f3>/<68d7852aad155e28e9f892a0>/status_badge.svg)](https://codemagic.io/apps/<app-id>/<workflow-id>/latest_build)
+[![Codemagic build status](https://api.codemagic.io/apps/<68d78e67719e6798309ef8f3>/<68d7852aad155e28e9f892a0>/status_badge.svg)](https://codemagic.io/apps/<68d78e67719e6798309ef8f3>/<68d7852aad155e28e9f892a0>/latest_build)
