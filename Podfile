@@ -12,16 +12,11 @@ target 'NextPatch' do
   pod 'SnackBar.swift'
   pod 'SDWebImage'
   pod 'Swinject'
+  pod 'NextPatchGame', :git => 'https://github.com/IrfanulArifa/Modularization-Game-Module.git', :tag => '1.0.2'
 
   target 'NextPatchTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-end
-
-# Module Game
-target 'Game' do
-  use_frameworks!
-  project './Game/Game'
 end

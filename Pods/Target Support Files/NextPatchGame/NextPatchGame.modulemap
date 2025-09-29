@@ -1,0 +1,6 @@
+framework module NextPatchGame {
+  umbrella header "NextPatchGame-umbrella.h"
+
+  export *
+  module * { export * }
+}
