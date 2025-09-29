@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import Game
+import NextPatchGame
 @testable import NextPatch
 
 final class GameFilterTest: XCTestCase {

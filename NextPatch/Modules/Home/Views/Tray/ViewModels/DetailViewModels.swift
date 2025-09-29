@@ -7,7 +7,7 @@
 
 import Combine
 import UIKit
-import Game
+import NextPatchGame
 
 class DetailViewModels: ObservableObject {
     @Published var gameDetails: GameDetailsEntity?

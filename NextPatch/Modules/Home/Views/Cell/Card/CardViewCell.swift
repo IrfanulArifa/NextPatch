@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Game
+import NextPatchGame
 
 class CardViewCell: UITableViewCell {
 

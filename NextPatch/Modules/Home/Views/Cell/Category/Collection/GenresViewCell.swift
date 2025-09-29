@@ -7,7 +7,7 @@
 
 import UIKit
 import SDWebImage
-import Game
+import NextPatchGame
 
 class GenresViewCell: UICollectionViewCell {
 

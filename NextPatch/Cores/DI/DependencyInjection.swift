@@ -1,5 +1,5 @@
 import Swinject
-import Game
+import NextPatchGame
 
 class DependencyInjection {
     static let shared = DependencyInjection()
