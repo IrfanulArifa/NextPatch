@@ -9,27 +9,18 @@ PODS:
   - Swinject (2.9.1)
 
 DEPENDENCIES:
-  - NextPatchGame (from `https://github.com/IrfanulArifa/Modularization-Game-Module.git`, tag `1.0.2`)
+  - NextPatchGame
   - SDWebImage
   - SnackBar.swift
   - Swinject
 
 SPEC REPOS:
   trunk:
+    - NextPatchGame
     - SDWebImage
     - SnackBar.swift
     - SnapKit
     - Swinject
-
-EXTERNAL SOURCES:
-  NextPatchGame:
-    :git: https://github.com/IrfanulArifa/Modularization-Game-Module.git
-    :tag: 1.0.2
-
-CHECKOUT OPTIONS:
-  NextPatchGame:
-    :git: https://github.com/IrfanulArifa/Modularization-Game-Module.git
-    :tag: 1.0.2
 
 SPEC CHECKSUMS:
   NextPatchGame: 83ed7ae5f950ae506fda72e872657f3bad563900
@@ -38,6 +29,6 @@ SPEC CHECKSUMS:
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   Swinject: a827d508c6270da03ec74e558e728917a888fa9b
 
-PODFILE CHECKSUM: ca3965333a73c1cc70f5dbdf79d36783456b899d
+PODFILE CHECKSUM: 5eb1ad482edbbf9d5d61a4c23e5c45ab857a8ede
 
 COCOAPODS: 1.16.2

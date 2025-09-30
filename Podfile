@@ -12,7 +12,7 @@ target 'NextPatch' do
   pod 'SnackBar.swift'
   pod 'SDWebImage'
   pod 'Swinject'
-  pod 'NextPatchGame', :git => 'https://github.com/IrfanulArifa/Modularization-Game-Module.git', :tag => '1.0.2'
+  pod 'NextPatchGame'
 
   target 'NextPatchTests' do
     inherit! :search_paths
